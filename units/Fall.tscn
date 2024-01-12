@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/units/fall.png" type="Texture" id=1]
+[ext_resource path="res://units/patrol.gd" type="Script" id=2]
+[ext_resource path="res://area/FallArea.tscn" type="PackedScene" id=3]
+
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 32.0
+
+[node name="Sprite" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="FallArea" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallArea"]
+shape = SubResource( 1 )
